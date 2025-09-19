@@ -1,0 +1,13 @@
+http://localhost:8000/?name=Security
+http://localhost:8000/?name=' OR '1'='1
+http://localhost:5000/?name=Security
+http://localhost:5000/?name=' OR '1'='1
+
+http://localhost:8000/xss.php?q=hello
+http://localhost:8000/xss.php?q=<script>alert('xss')</script>
+http://localhost:5000/xss?q=hello
+http://localhost:5000/xss?q=<script>alert(1)</script>
+
+http://localhost:5000/?cmd= ls; id 
+http://localhost:5000/?cmd=help
+http://localhost:5000/?cmd=status

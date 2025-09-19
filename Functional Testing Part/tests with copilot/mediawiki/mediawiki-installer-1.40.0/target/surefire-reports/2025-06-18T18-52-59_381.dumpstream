@@ -1,0 +1,5 @@
+# Created at 2025-06-18T18:52:59.538
+Boot Manifest-JAR contains absolute paths in classpath 'E:\my-master-courses\semester-2\security\functional testing part\assignment\tests with copilot\mediawiki\mediawiki-installer-1.40.0\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

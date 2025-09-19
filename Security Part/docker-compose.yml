@@ -1,0 +1,47 @@
+services:
+  db:
+    image: mysql:5.7
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - ./web/simpledata.sql:/docker-entrypoint-initdb.d/simpledata.sql
+    networks:
+      - appnet
+
+  web:
+    build: ./web
+    container_name: web
+    ports:
+      - "8000:80"
+    depends_on:
+      - db
+    networks:
+      - appnet
+  
+  proxy:
+    build: ./proxy
+    container_name: proxy
+    ports:
+      - "5000:5000"
+    environment:
+      - WEB_SERVER_URL=http://web/index.php
+      - SQLI_ENABLED=false
+      - XSS_ENABLED=false     
+      - CMDI_ENABLED=false    
+      - DOS_ENABLED=false    
+    depends_on:
+      - web
+    networks:
+      - appnet
+
+  attacker:
+    build: ./attacker
+    container_name: attacker
+    depends_on:
+      - proxy
+    networks:
+      - appnet
+
+networks:
+  appnet:
