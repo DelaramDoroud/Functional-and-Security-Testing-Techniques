@@ -6,7 +6,7 @@ It demonstrates both **end-to-end functional testing** of web applications and *
 ---
 
 ## ✅ Functional Testing Part
-Your assignment is to design and implement end-to-end test suites for four different web applications, measuring the effort required in **manual development** vs **AI-assisted development**.
+This assignment is to design and implement end-to-end test suites for four different web applications, measuring the effort required in **manual development** vs **AI-assisted development**.
 
 ### Applications Tested
 - **ExpressCart**  
